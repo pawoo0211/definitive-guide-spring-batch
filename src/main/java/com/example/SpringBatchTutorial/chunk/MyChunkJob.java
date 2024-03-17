@@ -1,4 +1,4 @@
-package com.example.SpringBatchTutorial.chunkjob;
+package com.example.SpringBatchTutorial.chunk;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;

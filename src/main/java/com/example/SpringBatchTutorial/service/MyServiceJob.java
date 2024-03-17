@@ -1,4 +1,4 @@
-package com.example.SpringBatchTutorial.servicejob;
+package com.example.SpringBatchTutorial.service;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
