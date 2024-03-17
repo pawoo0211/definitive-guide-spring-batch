@@ -1,5 +1,8 @@
-package com.example.SpringBatchTutorial;
+package com.example.SpringBatchTutorial.helloworldjob;
 
+import com.example.SpringBatchTutorial.DailyJobTimeStamper;
+import com.example.SpringBatchTutorial.JobLoggerListener;
+import com.example.SpringBatchTutorial.ParameterValidator;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -18,7 +21,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Arrays;
 
 @Configuration
-public class HelloWorld {
+public class HelloWorldJob {
     @Autowired
     private JobBuilderFactory jobBuilderFactory;
     @Autowired
