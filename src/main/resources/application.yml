@@ -1,7 +1,7 @@
 spring:
   batch:
     job:
-      names: ${job.name:basicJob-2}
+      names: ${job.name:basicJob-1}
     jdbc:
       initialize-schema: always
   datasource:

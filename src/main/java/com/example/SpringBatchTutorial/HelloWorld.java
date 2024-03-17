@@ -7,6 +7,7 @@ import org.springframework.batch.core.configuration.annotation.StepBuilderFactor
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.core.job.CompositeJobParametersValidator;
 import org.springframework.batch.core.job.DefaultJobParametersValidator;
+import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,19 +26,18 @@ public class HelloWorld {
 
     @Bean
     public Job job() {
-        return jobBuilderFactory.get("basicJob-2")                // 잡 파라미터
+        return jobBuilderFactory.get("basicJob-1")                // 잡 파라미터
                 .start(step1())
                 .validator(validator())
+                .incrementer(new DailyJobTimeStamper())
                 .build();
     }
 
     @Bean
     public Step step1() {
         return stepBuilderFactory.get("step1")
-                .tasklet((contribution, chunkContext) -> {
-                    System.out.println("HelloWorld!!");
-                    return RepeatStatus.FINISHED;
-                }).build();
+                .tasklet(helloWorldTasklet(null, null))
+                .build();
     }
 
     @StepScope
@@ -62,7 +62,7 @@ public class HelloWorld {
         // Instantiate DefaultJobParametersValidator
         DefaultJobParametersValidator defaultValidator = new DefaultJobParametersValidator();
         defaultValidator.setRequiredKeys(new String[] {"fileName"});
-        defaultValidator.setOptionalKeys(new String[] {"name"});
+        defaultValidator.setOptionalKeys(new String[] {"name", "currentDate"});
         defaultValidator.afterPropertiesSet();
 
         // Inject into CompositeJobParametersValidator

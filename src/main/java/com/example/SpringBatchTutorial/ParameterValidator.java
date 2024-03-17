@@ -11,8 +11,10 @@ public class ParameterValidator implements JobParametersValidator {
         String fileName = parameters.getString("fileName");
 
         if (!StringUtils.hasText(fileName)) {
+            System.out.println("input fileName : " + fileName);
             throw new JobParametersInvalidException("file name is missing");
         } else if (!StringUtils.endsWithIgnoreCase(fileName,"csv")) {
+            System.out.println("input fileName : " + fileName);
             throw new JobParametersInvalidException("file is not csv");
         }
     }
