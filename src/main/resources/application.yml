@@ -1,7 +1,7 @@
 spring:
   batch:
     job:
-      names: ${job.name:invokingServiceJob}
+      names: ${job.name:chunkJob-2}
     jdbc:
       initialize-schema: always
   datasource:

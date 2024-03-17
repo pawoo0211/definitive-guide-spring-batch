@@ -1,4 +1,4 @@
-package com.example.SpringBatchTutorial;
+package com.example.SpringBatchTutorial.helloworldjob;
 
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.annotation.AfterJob;

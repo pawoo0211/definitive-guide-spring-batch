@@ -1,8 +1,5 @@
 package com.example.SpringBatchTutorial.helloworldjob;
 
-import com.example.SpringBatchTutorial.DailyJobTimeStamper;
-import com.example.SpringBatchTutorial.JobLoggerListener;
-import com.example.SpringBatchTutorial.ParameterValidator;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;

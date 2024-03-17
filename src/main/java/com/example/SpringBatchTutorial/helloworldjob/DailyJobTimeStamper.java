@@ -1,4 +1,4 @@
-package com.example.SpringBatchTutorial;
+package com.example.SpringBatchTutorial.helloworldjob;
 
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersBuilder;
